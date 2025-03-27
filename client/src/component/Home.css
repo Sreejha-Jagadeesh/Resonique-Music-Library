@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+:root {
+  --body-color: #000;
+  --navbar-color: #0d1b2a;
+  --accent-color: #1db954;
+  --hover-color: #1db954;
+  --white-color: #fff;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-color);
+  color: var(--white-color);
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  overflow: hidden; /* Prevent page scroll */
+}
+
+/* Home Container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Full height */
+  position: relative;
+  padding-bottom: 80px; /* Space for navbar */
+  text-align: center;
+}
+
+/* Title */
+.home-title {
+  font-size: 2rem;
+  color: var(--accent-color);
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-top: 20px;
+}
+
+/* Video Container - Scrollable */
+.video-container {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  padding-bottom: 100px; /* Prevent last row from being hidden */
+}
+
+/* Hide scrollbar */
+.video-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 videos per row */
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Video Styling */
+iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: transform 0.3s ease-in-out;
+}
+
+iframe:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .video-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

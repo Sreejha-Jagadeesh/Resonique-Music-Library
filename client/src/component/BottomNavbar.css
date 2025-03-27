@@ -1,0 +1,80 @@
+/* Wrapper for Navbar - Black Background */
+.bottom-navbar-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black; /* Full black background */
+  height: 90px; /* Space for navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Actual Bottom Navbar */
+.bottom-navbar {
+  position: relative;
+  background-color: rgba(13, 27, 42, 0.9); /* Dark transparent */
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  gap: 30px;
+  overflow: hidden;
+  height: 60px;
+}
+
+/* Animated Border */
+.bottom-navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 3px;
+  background: linear-gradient(0deg, transparent, var(--accent-color), transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotating-border 3s linear infinite;
+}
+
+/* Border Animation */
+@keyframes rotating-border {
+  0% { background: linear-gradient(0deg, transparent, var(--accent-color), transparent); }
+  25% { background: linear-gradient(90deg, transparent, var(--accent-color), transparent); }
+  50% { background: linear-gradient(180deg, transparent, var(--accent-color), transparent); }
+  75% { background: linear-gradient(270deg, transparent, var(--accent-color), transparent); }
+  100% { background: linear-gradient(360deg, transparent, var(--accent-color), transparent); }
+}
+
+/* Navbar Buttons */
+.nav-button {
+  background: none;
+  border: none;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.nav-button:hover {
+  color: var(--hover-color);
+  transform: scale(1.2);
+}
+
+/* Slightly Larger Add Music Button */
+.add-music {
+  font-size: 36px;
+  width: 80px;
+  height: 80px;
+}
